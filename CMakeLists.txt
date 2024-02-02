@@ -1537,6 +1537,11 @@ target_link_libraries(native ${LIBZIP_LIBRARY} ${PNG_LIBRARIES} ${BASISU_LIBRARI
 #	target_link_libraries(native Ext::GLEW)
 #endif()
 
+pkg_check_modules(OSMESA REQUIRED osmesa)
+target_link_libraries(native orbital ${OSMESA_LIBRARIES} stdc++)
+target_include_directories(native PUBLIC ${OSMESA_INCLUDE_DIRS})
+target_compile_options(native PUBLIC ${OSMESA_CFLAGS_OTHER})
+
 if(ANDROID)
 	target_link_libraries(native log EGL OpenSLES)
 elseif(WIN32)
