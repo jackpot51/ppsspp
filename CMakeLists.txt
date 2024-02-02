@@ -1533,9 +1533,9 @@ if(ANDROID OR (LINUX AND ARM_DEVICE) OR (LINUX AND RISCV64) OR (LINUX AND LOONGA
 endif()
 
 target_link_libraries(native ${LIBZIP_LIBRARY} ${PNG_LIBRARIES} ${BASISU_LIBRARIES} ${ZLIB_LIBRARY} vma gason udis86 ${RT_LIB} ${nativeExtraLibs} ${ATOMIC_LIB} Common)
-if(TARGET Ext::GLEW)
-	target_link_libraries(native Ext::GLEW)
-endif()
+#if(TARGET Ext::GLEW)
+#	target_link_libraries(native Ext::GLEW)
+#endif()
 
 if(ANDROID)
 	target_link_libraries(native log EGL OpenSLES)

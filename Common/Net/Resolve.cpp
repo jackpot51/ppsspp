@@ -19,11 +19,15 @@
 #else
 #include <sys/ioctl.h>
 #include <sys/socket.h>
+#if !defined(__redox__)
 #include <net/if.h>
+#endif
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <netdb.h>
+#if !defined(__redox__)
 #include <ifaddrs.h>
+#endif
 #include <unistd.h>
 #endif
 

@@ -34,7 +34,7 @@
 #include <sys/ioctl.h>
 #include <sys/socket.h>
 #include <sys/types.h>
-#if !PPSSPP_PLATFORM(SWITCH)
+#if !PPSSPP_PLATFORM(SWITCH) && !defined(__redox__)
 #include <ifaddrs.h>
 #endif // !PPSSPP_PLATFORM(SWITCH)
 #endif

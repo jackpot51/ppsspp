@@ -52,7 +52,7 @@ bool free_disk_space(const Path &path, int64_t &space) {
 
 	if (res == 0) {
 		// Not sure why we're excluding Android here anyway...
-#ifndef __ANDROID__
+#if !defined(__ANDROID__) && !defined(__redox__)
 		if (diskstat.f_flag & ST_RDONLY) {
 			// No space to write.
 			space = 0;

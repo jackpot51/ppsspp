@@ -233,7 +233,9 @@ bool Server::Listen6(int port, bool ipv6_only) {
 
 	// Enable listening on IPv6 and IPv4?
 	opt = ipv6_only ? 1 : 0;
+#if !defined(__redox__)
 	setsockopt(listener_, IPPROTO_IPV6, IPV6_V6ONLY, (const char *)&opt, sizeof(opt));
+#endif
 
 	if (bind(listener_, (struct sockaddr *)&server_addr, sizeof(server_addr)) < 0) {
 #if PPSSPP_PLATFORM(WINDOWS)
