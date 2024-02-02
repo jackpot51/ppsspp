@@ -100,9 +100,9 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Android")
 endif()
 
 # We only support Vulkan on Unix, macOS (by MoltenVK), Android and Windows.
-if(ANDROID OR WIN32 OR (UNIX AND NOT ARM_NO_VULKAN))
-	set(VULKAN ON)
-endif()
+#if(ANDROID OR WIN32 OR (UNIX AND NOT ARM_NO_VULKAN))
+#	set(VULKAN ON)
+#endif()
 
 # Default to bundled SDL2 on macOS, system SDL2 elsewhere.
 if(APPLE AND NOT IOS)
